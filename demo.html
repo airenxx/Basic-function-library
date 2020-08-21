@@ -1,0 +1,31 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-08-21 10:30:15
+ * @LastEditTime: 2020-08-21 11:30:08
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \基础函数库\demo.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./data-calculation.js"></script>
+  </head>
+  <body>
+    <script>
+      const object_array = [{ a: 1, b: 12 }, {a: 2, b: 13},{a: 3, b: 14}];
+      const array = [1,23,4,5]
+      let dataCalculation =  new DataCalculation();
+      console.log("object_maximum :>> ",dataCalculation.object_maximum(object_array,"b"));
+
+      console.log('array_sum :>> ', dataCalculation.array_sum(array));
+
+      console.log('pulled_out_attr :>> ', dataCalculation.pulled_out_attr(object_array,"b"));
+
+      console.log('object_array_sort :>> ', dataCalculation.object_array_sort(object_array,"a","ASC"));
+    </script>
+  </body>
+</html>
