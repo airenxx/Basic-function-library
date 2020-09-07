@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-08-21 10:30:15
- * @LastEditTime: 2020-08-21 11:30:08
+ * @LastEditTime: 2020-09-07 17:04:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \基础函数库\demo.html
@@ -18,6 +18,7 @@
     <script>
       const object_array = [{ a: 1, b: 12 }, {a: 2, b: 13},{a: 3, b: 14}];
       const array = [1,23,4,5]
+      const null_array=[],null_object={};
       let dataCalculation =  new DataCalculation();
       console.log("object_maximum :>> ",dataCalculation.object_maximum(object_array,"b"));
 
@@ -26,6 +27,8 @@
       console.log('pulled_out_attr :>> ', dataCalculation.pulled_out_attr(object_array,"b"));
 
       console.log('object_array_sort :>> ', dataCalculation.object_array_sort(object_array,"a","ASC"));
+
+      console.log('check_null_obj :>> ', dataCalculation.check_null_obj(null_object));
     </script>
   </body>
 </html>

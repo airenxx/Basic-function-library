@@ -80,20 +80,40 @@ class DataCalculation {
     return array.sort((a, b) => (type == "DESC" ? a - b : b - a));
   }
 
-  object_array_sort(object_array,key, type = "DESC") {
+  object_array_sort(object_array, key, type = "DESC") {
     this.date_type_verification(object_array);
-    return object_array.sort((a, b) => (type == "DESC" ? a[key] - b[key] : b[key] - a[key]));
+    return object_array.sort((a, b) =>
+      type == "DESC" ? a[key] - b[key] : b[key] - a[key]
+    );
   }
 
-  array_group_by(array, f){
+  array_group_by(array, f) {
     const groups = {};
-    array.forEach(function(o) {
+    array.forEach(function (o) {
       const group = JSON.stringify(f(o));
       groups[group] = groups[group] || [];
       groups[group].push(o);
     });
-    return Object.keys(groups).map(function(group) {
+    return Object.keys(groups).map(function (group) {
       return groups[group];
-    }); 
+    });
+  }
+
+  /**
+   * 判断object 是否为空
+   * @param {*} object
+   */
+  check_null_obj(object) {
+    this.date_type_verification(object, this.data_type[1]);
+    return Object.keys(object).length == 0;
+  }
+
+  /**
+   * 判断array 是否为空
+   * @param {*} object
+   */
+  check_null_arr(array) {
+    this.date_type_verification(object);
+    return array.length == 0;
   }
 }
